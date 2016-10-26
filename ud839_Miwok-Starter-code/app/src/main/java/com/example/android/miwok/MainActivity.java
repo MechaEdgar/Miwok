@@ -15,8 +15,12 @@
  */
 package com.example.android.miwok;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,5 +30,99 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+
+        //Find the View that shows the numbers category
+        TextView numbers= (TextView) findViewById(R.id.numbers);
+
+        //Set a clickListener on that View.
+        numbers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Make a Toast that shows what view are you opening
+                Toast.makeText(v.getContext(),"Open the list of numbers", Toast.LENGTH_SHORT).show();
+                //Create a new intent to open {@link NumbersActivity}
+                Intent numbersIntent = new Intent(MainActivity.this,
+                        NumbersActivity.class);
+
+                //Start the new activity
+                startActivity(numbersIntent);
+            }
+        });
+
+        //Find the View that shows the colors category
+        TextView colors = (TextView) findViewById(R.id.colors);
+
+        //Set a clickListener on colors
+        colors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Make a Toast that shows what view are you opening
+                Toast.makeText(v.getContext(),"Open the list of colors", Toast.LENGTH_SHORT).show();
+                //Create a new intent to open {@link NumbersActivity}
+                Intent colorsIntent = new Intent(MainActivity.this,
+                        ColorsActivity.class);
+
+                //Start the new activity
+                startActivity(colorsIntent);
+            }
+        });
+
+        // Find the view that shows the family category
+        TextView family = (TextView) findViewById(R.id.family);
+
+        //Set a clickListener on colors
+        family.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Make a Toast that shows what view are you opening
+                Toast.makeText(v.getContext(),"Open the family list", Toast.LENGTH_SHORT).show();
+                //Create a new intent to open {@link FamilyActivity}
+                Intent familyIntent = new Intent(MainActivity.this,
+                        FamilyActivity.class);
+                //Start family activity
+                startActivity(familyIntent);
+            }
+        });
+
+        // Find the view that shows the phrases category
+        TextView phrases = (TextView) findViewById(R.id.phrases);
+        // Set a clickListener to phrases
+        phrases.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Make a Toast that shows what view are you opening
+                Toast.makeText(v.getContext(),"Open Phrases list", Toast.LENGTH_SHORT).show();
+
+                //Create a new intent to open {@link PhrasesActivity}
+                Intent phrasesIntent = new Intent(MainActivity.this,
+                        PhrasesActivity.class);
+                //Start Phrases activity
+                startActivity(phrasesIntent);
+            }
+        });
     }
+
+ /*   public void openNumbersList(View view) {
+        // Intent to launch NumbersActivity
+        Intent i = new Intent(this, NumbersActivity.class);
+        startActivity(i);
+    }
+
+    public void  openFamilyMembersList(View view) {
+        // Intent to launch FamilyActivity
+        Intent i =  new Intent(this, FamilyActivity.class);
+        startActivity(i);
+    }
+
+    public void openColorsList(View view){
+        //Intent to launch ColorsActivity
+        Intent i = new Intent(this, ColorsActivity.class);
+        startActivity(i);
+    }
+
+    public void openPhrasesList(View view){
+        //Intent to launch PhrasesActivity
+        Intent i = new Intent(this,PhrasesActivity.class);
+        startActivity(i);
+    } */
 }
