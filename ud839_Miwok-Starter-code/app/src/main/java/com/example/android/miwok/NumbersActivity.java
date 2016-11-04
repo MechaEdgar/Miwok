@@ -34,15 +34,17 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("nine");
         words.add("ten");
 
-        //Add TextViews to the screen for each number using a while loop.
-        int index = 0;
-        while (index < 10) {
+
+        //Add TextViews to the screen for each number using a for loop.
+
+        for (int index=0;index < words.size();index++){
+            //Find the root view of the whole layout
             LinearLayout rootView = (LinearLayout) findViewById(R.id.activity_numbers);
+            //Create a new {@link TextView} that displayed the word at the index and add the View
+            // as a child to the rootView
             TextView wordView = new TextView(this);
             wordView.setText(words.get(index));
             rootView.addView(wordView);
-
-            index++;
 
         }
         //Log to check the words
