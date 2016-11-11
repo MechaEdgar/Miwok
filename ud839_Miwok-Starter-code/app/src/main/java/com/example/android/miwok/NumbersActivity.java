@@ -1,20 +1,10 @@
 package com.example.android.miwok;
 
-import android.app.Activity;
-import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.GridView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
-
-import static com.example.android.miwok.R.id.numbers;
 
 public class NumbersActivity extends AppCompatActivity {
     // Add a constant final variable TAG to use it in our logs
@@ -26,7 +16,7 @@ public class NumbersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.word_list);
 
         //Create and ArrayList of words
         ArrayList<Word> words = new ArrayList<Word>();
@@ -47,7 +37,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         for (int index=0;index < words.size();index++){
             //Find the root view of the whole layout
-            LinearLayout rootView = (LinearLayout) findViewById(R.id.activity_numbers);
+            LinearLayout rootView = (LinearLayout) findViewById(R.id.word_list);
             //Create a new {@link TextView} that displayed the word at the index and add the View
             // as a child to the rootView
             TextView wordView = new TextView(this);
