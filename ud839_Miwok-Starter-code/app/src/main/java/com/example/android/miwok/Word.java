@@ -17,15 +17,22 @@ public class Word {
     private  String mMiwokTranslation;
 
     //**Image resource ID for the word*/
-    private int mImageResourceId ;
+    private int mImageResourceId = NO_IMAGE_PROVIDED ;
+
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     /**
      * Defining the Word constructor with 2 strings and 1 int for the rest of activities
-     * @param DefaultTranslation is the word in a language that the user use (english)
-     * @param MiwokTranslation is the word in the Mikow language
-     * @param ImageResourceId is the Image
+     * @param defaultTranslation is the word in a language that the user use (english)
+     * @param miwokTranslation is the word in the Mikow language
+     * @param imageResourceId is the drawable resource ID for the image asset
      **/
-    public Word(String DefaultTranslation, String MiwokTranslation, int ImageResourceId){
+
+
+        public Word(String defaultTranslation, String miwokTranslation, int imageResourceId){
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mImageResourceId = imageResourceId;
 
     }
 
@@ -59,7 +66,13 @@ public class Word {
         return mImageResourceId;
     }
 
-
+    /**
+     * Returns whether or not there is an image for this word.
+     * @return boolean true or false
+     */
+    public boolean hasImage(){
+    return mImageResourceId != NO_IMAGE_PROVIDED;
+    }
 
 }
 
