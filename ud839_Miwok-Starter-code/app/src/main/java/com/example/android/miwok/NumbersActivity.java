@@ -45,12 +45,17 @@ public class NumbersActivity extends AppCompatActivity {
             rootView.addView(wordView);
 
         }*/
+        //Create an {@link WorkAdapter}, whose data source is a list of {@link Word}s.The
+        //adapter knows hot to create list items for each item in the list.
+        WordAdapter adapter = new WordAdapter(this, words, R.color.category_numbers);
 
-        WordAdapter adapter =
-                new WordAdapter(this, words);
-
+        //Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
+        //There should be a {@link ListView} with the view ID called list, wich is declared in
+        //word_list.xml layout file.
         ListView listView = (ListView) findViewById(R.id.list);
 
+        //Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
+        //{@link ListView} will display list items for each {@link Word} in the list.
         listView.setAdapter(adapter);
 
     }
