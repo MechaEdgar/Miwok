@@ -19,6 +19,20 @@ public class Word {
     //**Image resource ID for the word*/
     private int mImageResourceId ;
 
+    /**
+     * Defining the Word constructor with 2 strings and 1 int for the rest of activities
+     * @param DefaultTranslation is the word in a language that the user use (english)
+     * @param MiwokTranslation is the word in the Mikow language
+     * @param ImageResourceId is the Image
+     **/
+    public Word(String DefaultTranslation, String MiwokTranslation, int ImageResourceId){
+
+    }
+
+    /**Defining the Word constructor with 2 strings for PhrasesActivity
+     * @param defaultTranslation is the word in a language that the user use(english)
+     * @param miwokTranslation is the word in the Miwok translation
+     **/
     public Word(String defaultTranslation, String miwokTranslation){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
