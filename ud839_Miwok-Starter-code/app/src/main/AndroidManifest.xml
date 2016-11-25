@@ -35,15 +35,15 @@
         <activity
             android:name=".PhrasesActivity"
             android:label="@string/title_activity_phrases"
-            android:theme="@style/AppTheme.NoActionBar" />
+             />
         <activity
             android:name=".FamilyActivity"
             android:label="@string/title_activity_family"
-            android:theme="@style/AppTheme.NoActionBar" />
+             />
         <activity
             android:name=".ColorsActivity"
             android:label="@string/title_activity_colors"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            ></activity>
     </application>
 
 </manifest>
