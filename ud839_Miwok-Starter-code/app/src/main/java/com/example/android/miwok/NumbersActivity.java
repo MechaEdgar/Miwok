@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import static android.media.CamcorderProfile.get;
 import static java.security.AccessController.getContext;
 
 public class NumbersActivity extends AppCompatActivity {
@@ -71,8 +72,9 @@ public class NumbersActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MediaPlayer mMediaPlayer = MediaPlayer.create(NumbersActivity.this,R.raw.number_one);
-                mMediaPlayer.start();
+                Word word = words.get(position);
+                MediaPlayer mMediaPlayer = MediaPlayer.create(NumbersActivity.this, word.getmAudioResourceId());
+                mMediaPlayer.start();// no need to call prepare(); create() does that for you 
             }
         });
 
