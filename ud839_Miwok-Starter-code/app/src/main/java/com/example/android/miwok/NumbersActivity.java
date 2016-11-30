@@ -1,10 +1,19 @@
 package com.example.android.miwok;
 
+import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import static java.security.AccessController.getContext;
 
 public class NumbersActivity extends AppCompatActivity {
     // Add a constant final variable TAG to use it in our logs
@@ -18,8 +27,9 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
+
         //Create and ArrayList of words
-        ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<Word>();
         //words.add("one");
         words.add(new Word("one", "lutti", R.drawable.number_one));
         words.add(new Word("two", "otiiko", R.drawable.number_two));
@@ -57,6 +67,14 @@ public class NumbersActivity extends AppCompatActivity {
         //Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
         //{@link ListView} will display list items for each {@link Word} in the list.
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                MediaPlayer mMediaPlayer = MediaPlayer.create(NumbersActivity.this,R.raw.number_one);
+                mMediaPlayer.start();
+            }
+        });
 
     }
 }

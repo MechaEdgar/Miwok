@@ -21,6 +21,8 @@ public class Word {
 
     private static final int NO_IMAGE_PROVIDED = -1;
 
+    private int mMediaPlayer;
+
     /**
      * Defining the Word constructor with 2 strings and 1 int for the rest of activities
      * @param defaultTranslation is the word in a language that the user use (english)
