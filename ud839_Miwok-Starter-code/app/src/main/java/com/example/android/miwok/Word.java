@@ -21,30 +21,35 @@ public class Word {
 
     private static final int NO_IMAGE_PROVIDED = -1;
 
-    private int mMediaPlayer;
+    // Audio resource Id for the word
+    private int mAudioResourceId;
 
     /**
      * Defining the Word constructor with 2 strings and 1 int for the rest of activities
      * @param defaultTranslation is the word in a language that the user use (english)
      * @param miwokTranslation is the word in the Mikow language
      * @param imageResourceId is the drawable resource ID for the image asset
+     * @param audioResourceId is the audio Resource for the audio file associated with this word.
      **/
 
 
-        public Word(String defaultTranslation, String miwokTranslation, int imageResourceId){
+        public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
 
     }
 
     /**Defining the Word constructor with 2 strings for PhrasesActivity
      * @param defaultTranslation is the word in a language that the user use(english)
      * @param miwokTranslation is the word in the Miwok translation
+     * @param audioResourceId is the audio Resource for the audio file associated with this word.
      **/
-    public Word(String defaultTranslation, String miwokTranslation){
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
     /**
@@ -75,6 +80,12 @@ public class Word {
     public boolean hasImage(){
     return mImageResourceId != NO_IMAGE_PROVIDED;
     }
+
+    /**
+     * Returns the audio resource ID of the word.
+     * @return int
+     */
+    public int getmAudioResourceId(){return mAudioResourceId; }
 
 }
 
