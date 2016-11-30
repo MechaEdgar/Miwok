@@ -74,7 +74,7 @@ public class NumbersActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word word = words.get(position);
                 MediaPlayer mMediaPlayer = MediaPlayer.create(NumbersActivity.this, word.getmAudioResourceId());
-                mMediaPlayer.start();// no need to call prepare(); create() does that for you 
+                mMediaPlayer.start();// no need to call prepare(); create() does that for you
             }
         });
 
