@@ -12,7 +12,8 @@ import java.util.ArrayList;
 public class PhrasesActivity extends AppCompatActivity {
     // Add a constant final variable TAG to use it in our logs
     private static final String TAG = "NumbersActivity";
-
+    //Handles playback fo all the sound files
+    private MediaPlayer mMediaPlayer;
 
 
 
@@ -60,7 +61,7 @@ public class PhrasesActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word word = words.get(position);
-                MediaPlayer mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, word.getmAudioResourceId());
+                mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, word.getmAudioResourceId());
                 mMediaPlayer.start();// no need to call prepare(); create() does that for you
             }
         });

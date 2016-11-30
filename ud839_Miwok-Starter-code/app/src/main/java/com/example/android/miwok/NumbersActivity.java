@@ -14,11 +14,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import static android.media.CamcorderProfile.get;
+import static android.os.Build.VERSION_CODES.M;
 import static java.security.AccessController.getContext;
 
 public class NumbersActivity extends AppCompatActivity {
     // Add a constant final variable TAG to use it in our logs
     private static final String TAG = "NumbersActivity";
+    //Handles playback fo all the sound files
+    private MediaPlayer mMediaPlayer;
 
 
 
@@ -73,7 +76,7 @@ public class NumbersActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word word = words.get(position);
-                MediaPlayer mMediaPlayer = MediaPlayer.create(NumbersActivity.this, word.getmAudioResourceId());
+                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, word.getmAudioResourceId());
                 mMediaPlayer.start();// no need to call prepare(); create() does that for you
             }
         });
